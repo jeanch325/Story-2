@@ -11,23 +11,23 @@ import UIKit
 class SecondStoryViewController: UIViewController {
     
     //stories
-    let story1 : String = "s1"
-    let answer1a : String = "1a1"
-    let answer1b : String = "1a2"
+    let story1 : String = "You are in a plane 13,000 feet above the ground getting ready to skydive. Out of all of your friends, you are in line to go first. You look down and see nothing but fuzzy splotches of green. All of a sudden, you feel an intense amount of regret for signing up for this in the first place."
+    let answer1a : String = "You face your fears and jump."
+    let answer1b : String = "You back out."
     
-    let story2 : String = "s2"
-    let answer2a : String = "2a1"
-    let answer2b : String = "2a2"
+    let story2 : String = "Your friends make fun of you for not going. If you back out fully, you risk wasting the $400 you spent to make this trip happen AND looking like a complete loser in front of everyone you know."
+    let answer2a : String = "You decide to jump."
+    let answer2b : String = "You back out."
     
-    let story3 : String = "s3"
-    let answer3a : String = "3a1"
-    let answer3b : String = "3a2"
+    let story3 : String = "You're flying!.. Well, you're actually falling, but who cares. You see the ground rushing closer and closer by the second and abruptly you realize that you don'tknow which cord to pull to inflate the parachute. Do you:"
+    let answer3a : String = "Pull the red cord."
+    let answer3b : String = "Pull the blue cord."
     
-    let story4 : String = "s4"
+    let story4 : String = "It turns out, you should've jumped. The plane quickly loses fuel on the way back down the Earth and you crash and die."
     
-    let story5 : String = "s5"
+    let story5 : String = "You pull the blue cord and thankfully, the parachute opens! Blue is always the safest choice. You make it to the ground safely and now you can impress everyone that you meet by telling them you've jumped out of a moving plane and lived."
     
-    let story6 : String = "s6"
+    let story6 : String = "You pulled the red cord. The whole parachute comes out, but still in its folded form. You can't get it to inflate in time and you crash into the ground at full speed. You die. "
 
     
     @IBOutlet weak var secondStoryTextView: UITextView!

@@ -11,23 +11,23 @@ import UIKit
 class FirstStoryViewController: UIViewController {
     
     //stories
-    let story1 : String = "s1"
-    let answer1a : String = "1a1"
-    let answer1b : String = "1a2"
+    let story1 : String = "You're walking home at night after your car broke down after a quick TacoBell run. You don't know quite where you are and your phone is on 5% battery. You're using the last of your battery to find your way to the nearest public area but you really are quite lost. Suddenly, a white van drives up behind you. The man in the driver's seat lowers the window and yells at you to get in. You look and see that he has a knife in his left hand. Do you:"
+    let answer1a : String = "Get in the car."
+    let answer1b : String = "Try to sprint away."
     
-    let story2 : String = "s2"
-    let answer2a : String = "2a1"
-    let answer2b : String = "2a2"
+    let story2 : String = "The man runs out of the car and catches up to you. He drags you back to his car and begins driving. You can tell by his expression that he is angry that you didn't comply the first time."
+    let answer2a : String = "You sit quietly to get on his good side."
+    let answer2b : String = "You grab his knife and stab him."
     
-    let story3 : String = "s3"
-    let answer3a : String = "3a1"
-    let answer3b : String = "3a2"
+    let story3 : String = "After a minute of silence, you glance behind you in the backseat of the car and see a limp arm hanging out from behind the seat. He notices this and then tells you that he picked you up to help him dispose of the body. Once you get to the location - a field - , he gets out of the car and carries the body and a shovel to an empty plot of grass."
+    let answer3a : String = "While he holds the body, you run for your life."
+    let answer3b : String = "Scared, you help him dig the hole."
     
-    let story4 : String = "s4"
+    let story4 : String = "Did you forget that he was the one driving? The car, now with no one behind the wheel, swerves violently and crashes into a big oak tree. The car explodes and you die."
     
-    let story5 : String = "s5"
+    let story5 : String = "Once you finish burying the body, he hits you over the head with the shovel. You die."
     
-    let story6 : String = "s6"
+    let story6 : String = "Burdened by the weight of both the body and the shovel, he is unable to catch you. You make it out alive and never hear of the man and the body again."
     
     @IBOutlet weak var firstStoryTextView: UITextView!
     @IBOutlet weak var firstTopButton: UIButton!

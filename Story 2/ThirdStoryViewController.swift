@@ -11,23 +11,23 @@ import UIKit
 class ThirdStoryViewController: UIViewController {
     
     //stories
-    let story1 : String = "s1"
-    let answer1a : String = "1a1"
-    let answer1b : String = "1a2"
+    let story1 : String = "You're in space stuck on an alien ship. You have no idea how far away from Earth you are. The aliens have strapped you in a chair and locked it with a key located in the pocket of what appears to be the main alien, who happens to be right next to you,facing the other way. One key point to note is that all of the aliens are equipped with laser guns. Do you:"
+    let answer1a : String = "Try to grab the key."
+    let answer1b : String = "Stay put."
     
-    let story2 : String = "s2"
-    let answer2a : String = "2a1"
-    let answer2b : String = "2a2"
+    let story2 : String = "The aircraft starts to flash red lights and the aliens start panicking. The contraints you are put in come loose, but the security aliens are still watching to make sure you stay in place. Do you:"
+    let answer2a : String = "Escape!"
+    let answer2b : String = "Stay put."
     
-    let story3 : String = "s3"
-    let answer3a : String = "3a1"
-    let answer3b : String = "3a2"
+    let story3 : String = "The aliens didn't catch you and you made it out of the main room! In front of you, you see two possible exit points to take: a small door leading to an escape shuttle guarded by another alien or a bigger door with an unknown destination with no alien. Which door do you take? "
+    let answer3a : String = "Small door."
+    let answer3b : String = "Big door."
     
-    let story4 : String = "s4"
+    let story4 : String = "As you sit there, you see the aliens begin to panic more and more. The red lights continue to flash and you realize you should have left. The spaceship begins to shut down and you die."
     
-    let story5 : String = "s5"
+    let story5 : String = "You whip te big door open and are immediately confronted by a giant group of aliens who all simultaneously turn around and look at you. You try to run, but they swarm you and kill you."
     
-    let story6 : String = "s5"
+    let story6 : String = "Luckily, you are strong enough to knock the guard alien out. You go through the door and escape through the emergency shuttle. As you soar away, you see the main spaceship slowly start to shut down. You made it out alive!"
     
     @IBOutlet weak var thirdStoryTextView: UITextView!
     @IBOutlet weak var thirdTopButton: UIButton!
