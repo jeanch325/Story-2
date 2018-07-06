@@ -32,7 +32,7 @@ class FirstStoryViewController: UIViewController {
     @IBOutlet weak var firstStoryTextView: UITextView!
     @IBOutlet weak var firstTopButton: UIButton!
     @IBOutlet weak var firstBottomButton: UIButton!
-    @IBOutlet weak var firstResetButton: UIButton!
+    
     
     var storyIndex : Int = 1
     
@@ -40,6 +40,9 @@ class FirstStoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstStoryTextView.text = story1
+        firstTopButton.setTitle(answer1a, for: .normal)
+        firstBottomButton.setTitle(answer1b, for: .normal)
 
         // call restart function here!!!!!!!
     }
@@ -82,10 +85,11 @@ class FirstStoryViewController: UIViewController {
         }
     }
     
-    @IBAction func Restart(_ sender: UIButton) {
+    
+
+    @IBAction func firstResetButton(_ sender: Any) {
         restart()
     }
-
     
     
     func restart () {
