@@ -86,13 +86,17 @@ class SecondStoryViewController: UIViewController {
     
     func restartAlert () {
         //ADD TIME DELAY
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // change 2 to desired number of seconds
+            // Your code with delay
+        
         let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Reset", style: .default) {
             (action) -> Void in self.restart()
         }
         
         alert.addAction(alertAction)
-        present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
+    }
     }
     
     

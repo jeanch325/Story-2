@@ -88,7 +88,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark road image" translatesAutoresizingMaskIntoConstraints="NO" id="aA3-DO-nwT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dark road clip art" translatesAutoresizingMaskIntoConstraints="NO" id="aA3-DO-nwT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BKs-0e-I0Y">
@@ -361,7 +361,7 @@
     </scenes>
     <resources>
         <image name="bookshelf BG" width="398" height="665"/>
-        <image name="dark road image" width="1920" height="1080"/>
+        <image name="dark road clip art" width="612" height="334"/>
         <image name="sky image" width="4032" height="3024"/>
         <image name="space image" width="1600" height="900"/>
     </resources>
