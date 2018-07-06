@@ -11,23 +11,23 @@ import UIKit
 class SecondStoryViewController: UIViewController {
     
     //stories
-    let story1 : String = ""
-    let answer1a : String = ""
-    let answer1b : String = ""
+    let story1 : String = "s1"
+    let answer1a : String = "1a1"
+    let answer1b : String = "1a2"
     
-    let story2 : String = ""
-    let answer2a : String = ""
-    let answer2b : String = ""
+    let story2 : String = "s2"
+    let answer2a : String = "2a1"
+    let answer2b : String = "2a2"
     
-    let story3 : String = ""
-    let answer3a : String = ""
-    let answer3b : String = ""
+    let story3 : String = "s3"
+    let answer3a : String = "3a1"
+    let answer3b : String = "3a2"
     
-    let story4 : String = ""
+    let story4 : String = "s4"
     
-    let story5 : String = ""
+    let story5 : String = "s5"
     
-    let story6 : String = ""
+    let story6 : String = "s6"
 
     
     @IBOutlet weak var secondStoryTextView: UITextView!
@@ -38,14 +38,63 @@ class SecondStoryViewController: UIViewController {
     var storyIndex : Int = 1
 
     override func viewDidLoad() {
+        restart()
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //call restart func
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if (storyIndex == 1 || storyIndex == 2) && sender.tag == 1 {  //if it is on story 1 or 2 and user presses top button
+            storyIndex = 3
+            secondStoryTextView.text = story3
+            secondTopButton.setTitle(answer3a, for: .normal)
+            secondBottomButton.setTitle(answer3b, for: .normal)
+        }
+        else if storyIndex == 1 && sender.tag == 2 {
+            storyIndex = 2
+            secondStoryTextView.text = story2
+            secondTopButton.setTitle(answer2a, for: .normal)
+            secondBottomButton.setTitle(answer2b, for: .normal)
+        }
+        else if storyIndex == 2 && sender.tag == 2 {
+            storyIndex = 4
+            secondStoryTextView.text = story4
+            secondTopButton.isHidden = true
+            secondBottomButton.isHidden = true
+        }
+        else if storyIndex == 3 && sender.tag == 1 {
+            storyIndex = 6
+            secondStoryTextView.text = story6
+            secondTopButton.isHidden = true
+            secondBottomButton.isHidden = true
+        }
+        else if storyIndex == 3 && sender.tag == 2 {
+            storyIndex = 5
+            secondStoryTextView.text = story5
+            secondTopButton.isHidden = true
+            secondBottomButton.isHidden = true
+        }
+    }
+    
+    
+    
+    @IBAction func firstResetButton(_ sender: Any) {
+        restart()
+    }
+    
+    
+    func restart () {
+        storyIndex = 1
+        secondStoryTextView.text = story1
+        secondTopButton.isHidden = false
+        secondBottomButton.isHidden = false
+        secondTopButton.setTitle(answer1a, for: .normal)
+        secondBottomButton.setTitle(answer1b, for: .normal)
     }
     
 

@@ -11,23 +11,23 @@ import UIKit
 class ThirdStoryViewController: UIViewController {
     
     //stories
-    let story1 : String = ""
-    let answer1a : String = ""
-    let answer1b : String = ""
+    let story1 : String = "s1"
+    let answer1a : String = "1a1"
+    let answer1b : String = "1a2"
     
-    let story2 : String = ""
-    let answer2a : String = ""
-    let answer2b : String = ""
+    let story2 : String = "s2"
+    let answer2a : String = "2a1"
+    let answer2b : String = "2a2"
     
-    let story3 : String = ""
-    let answer3a : String = ""
-    let answer3b : String = ""
+    let story3 : String = "s3"
+    let answer3a : String = "3a1"
+    let answer3b : String = "3a2"
     
-    let story4 : String = ""
+    let story4 : String = "s4"
     
-    let story5 : String = ""
+    let story5 : String = "s5"
     
-    let story6 : String = ""
+    let story6 : String = "s6"
     
     @IBOutlet weak var thirdStoryTextView: UITextView!
     @IBOutlet weak var thirdTopButton: UIButton!
@@ -38,24 +38,61 @@ class ThirdStoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        restart()
+        // call restart
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if (storyIndex == 1 || storyIndex == 2) && sender.tag == 1 {  //if it is on story 1 or 2 and user presses top button
+            storyIndex = 3
+            thirdStoryTextView.text = story3
+            thirdTopButton.setTitle(answer3a, for: .normal)
+            thirdBottomButton.setTitle(answer3b, for: .normal)
+        }
+        else if storyIndex == 1 && sender.tag == 2 {
+            storyIndex = 2
+            thirdStoryTextView.text = story2
+            thirdTopButton.setTitle(answer2a, for: .normal)
+            thirdBottomButton.setTitle(answer2b, for: .normal)
+        }
+        else if storyIndex == 2 && sender.tag == 2 {
+            storyIndex = 4
+            thirdStoryTextView.text = story4
+            thirdTopButton.isHidden = true
+            thirdBottomButton.isHidden = true
+        }
+        else if storyIndex == 3 && sender.tag == 1 {
+            storyIndex = 6
+            thirdStoryTextView.text = story6
+            thirdTopButton.isHidden = true
+            thirdBottomButton.isHidden = true
+        }
+        else if storyIndex == 3 && sender.tag == 2 {
+            storyIndex = 5
+            thirdStoryTextView.text = story5
+            thirdTopButton.isHidden = true
+            thirdBottomButton.isHidden = true
+        }
     }
-    */
+    
+    
+    
+    @IBAction func firstResetButton(_ sender: Any) {
+        restart()
+    }
+    
+    
+    func restart () {
+        storyIndex = 1
+        thirdStoryTextView.text = story1
+        thirdTopButton.isHidden = false
+        thirdBottomButton.isHidden = false
+        thirdTopButton.setTitle(answer1a, for: .normal)
+        thirdBottomButton.setTitle(answer1b, for: .normal)
+    }
 
 }

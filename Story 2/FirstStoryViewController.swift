@@ -40,9 +40,7 @@ class FirstStoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstStoryTextView.text = story1
-        firstTopButton.setTitle(answer1a, for: .normal)
-        firstBottomButton.setTitle(answer1b, for: .normal)
+        restart()
 
         // call restart function here!!!!!!!
     }
