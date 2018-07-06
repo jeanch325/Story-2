@@ -33,7 +33,7 @@ class SecondStoryViewController: UIViewController {
     @IBOutlet weak var secondStoryTextView: UITextView!
     @IBOutlet weak var secondTopButton: UIButton!
     @IBOutlet weak var secondBottomButton: UIButton!
-    @IBOutlet weak var secondResetButton: UIButton!
+    
     
     var storyIndex : Int = 1
 
@@ -79,13 +79,26 @@ class SecondStoryViewController: UIViewController {
             secondTopButton.isHidden = true
             secondBottomButton.isHidden = true
         }
+        if (secondStoryTextView.text == story4 || secondStoryTextView.text == story5 || secondStoryTextView.text == story6) {
+            restartAlert()
+        }
+    }
+    
+    func restartAlert () {
+        //ADD TIME DELAY
+        let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Reset", style: .default) {
+            (action) -> Void in self.restart()
+        }
+        
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
     }
     
     
-    
-    @IBAction func firstResetButton(_ sender: Any) {
-        restart()
-    }
+//    @IBAction func firstResetButton(_ sender: Any) {
+//        restart()
+//    }
     
     
     func restart () {

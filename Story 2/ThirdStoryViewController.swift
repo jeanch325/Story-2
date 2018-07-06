@@ -27,12 +27,12 @@ class ThirdStoryViewController: UIViewController {
     
     let story5 : String = "s5"
     
-    let story6 : String = "s6"
+    let story6 : String = "s5"
     
     @IBOutlet weak var thirdStoryTextView: UITextView!
     @IBOutlet weak var thirdTopButton: UIButton!
     @IBOutlet weak var thirdBottomButton: UIButton!
-    @IBOutlet weak var thirdResetButton: UIButton!
+    
     
     var storyIndex : Int = 1
 
@@ -77,13 +77,26 @@ class ThirdStoryViewController: UIViewController {
             thirdTopButton.isHidden = true
             thirdBottomButton.isHidden = true
         }
+        if (thirdStoryTextView.text == story4 || thirdStoryTextView.text == story5 || thirdStoryTextView.text == story6) {
+            restartAlert()
+        }
+    }
+    
+    func restartAlert () {
+        //ADD TIME DELAY
+        let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Reset", style: .default) {
+            (action) -> Void in self.restart()
+        }
+        
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
     }
     
     
-    
-    @IBAction func firstResetButton(_ sender: Any) {
-        restart()
-    }
+//    @IBAction func firstResetButton(_ sender: Any) {
+//        restart()
+//    }
     
     
     func restart () {

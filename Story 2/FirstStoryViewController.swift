@@ -35,8 +35,7 @@ class FirstStoryViewController: UIViewController {
     
     
     var storyIndex : Int = 1
-    
-    
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,14 +80,29 @@ class FirstStoryViewController: UIViewController {
             firstTopButton.isHidden = true
             firstBottomButton.isHidden = true
         }
+        if (firstStoryTextView.text == story4 || firstStoryTextView.text == story5 || firstStoryTextView.text == story6) {
+        restartAlert()
+        }
     }
+    
+    func restartAlert () {
+        //ADD TIME DELAY
+            let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Reset", style: .default) {
+                (action) -> Void in self.restart()
+            }
+            
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
+        }
+
     
     
 
-    @IBAction func firstResetButton(_ sender: Any) {
-        restart()
-    }
-    
+//    @IBAction func firstResetButton(_ sender: Any) {
+//        restart()
+//    }
+//
     
     func restart () {
         storyIndex = 1
