@@ -62,17 +62,23 @@
                                 <color key="textColor" red="0.97478693181818177" green="0.85753449558862582" blue="0.66342347902950749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsh-KW-j0m">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsh-KW-j0m">
                                 <rect key="frame" x="16" y="113" width="171" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="kjs-Fa-N0o"/>
+                                    <constraint firstAttribute="height" constant="30" id="ulS-3n-Ws4"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMN-3k-ccV">
-                                <rect key="frame" x="245" y="113" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMN-3k-ccV">
+                                <rect key="frame" x="239" y="113" width="120" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QnJ-0k-dPB"/>
+                                    <constraint firstAttribute="width" constant="120" id="sb5-aV-Elz"/>
+                                </constraints>
                                 <state key="normal" title="Confirm Name">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -86,7 +92,11 @@
                             <constraint firstItem="Pq7-by-Kib" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="54u-to-wbb"/>
                             <constraint firstItem="Pq7-by-Kib" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="55b-m0-2rP"/>
                             <constraint firstItem="Pq7-by-Kib" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="EAZ-Bh-GYt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bMN-3k-ccV" secondAttribute="trailing" constant="16" id="L6e-iQ-0ci"/>
+                            <constraint firstItem="bMN-3k-ccV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="OKy-ys-WO0"/>
+                            <constraint firstItem="vsh-KW-j0m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="QJb-cI-gpd"/>
                             <constraint firstItem="Pq7-by-Kib" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zvn-Ke-9Xe"/>
+                            <constraint firstItem="vsh-KW-j0m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="z6X-s2-ren"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     var name = ""
     
     @IBOutlet weak var userNameTextFieldd: UITextField!
-
     
 //    class userName {
 //        var name = ""
