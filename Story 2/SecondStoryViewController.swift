@@ -33,13 +33,16 @@ class SecondStoryViewController: UIViewController {
     @IBOutlet weak var secondStoryTextView: UITextView!
     @IBOutlet weak var secondTopButton: UIButton!
     @IBOutlet weak var secondBottomButton: UIButton!
+    @IBOutlet weak var secondStoryTitle: UILabel!
     
-    
+    //var nCL = NameClassThing()
+    var name = ""
     var storyIndex : Int = 1
 
     override func viewDidLoad() {
-        restart()
         super.viewDidLoad()
+        restart()
+        secondStoryTitle.text = "\(name) goes skydiving"
         //call restart func
     }
 

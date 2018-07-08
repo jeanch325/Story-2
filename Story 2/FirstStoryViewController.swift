@@ -9,8 +9,13 @@
 import UIKit
 
 class FirstStoryViewController: UIViewController {
+    var name = ""
+    
+    //importing other class
+    //var nCL = NameClassThing()
     
     //stories
+    
     let story1 : String = "You're walking home at night after your car broke down after a quick TacoBell run. You don't know quite where you are and your phone is on 5% battery. You're using the last of your battery to find your way to the nearest public area but you really are quite lost. Suddenly, a white van drives up behind you. The man in the driver's seat lowers the window and yells at you to get in. You look and see that he has a knife in his left hand. Do you:"
     let answer1a : String = "Get in the car."
     let answer1b : String = "Try to sprint away."
@@ -32,14 +37,17 @@ class FirstStoryViewController: UIViewController {
     @IBOutlet weak var firstStoryTextView: UITextView!
     @IBOutlet weak var firstTopButton: UIButton!
     @IBOutlet weak var firstBottomButton: UIButton!
+    @IBOutlet weak var firstStoryTitle: UILabel!
     
     
     var storyIndex : Int = 1
-  
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         restart()
+        firstStoryTitle.text = "\(name)'s dark night"
 
         // call restart function here!!!!!!!
     }
@@ -115,7 +123,7 @@ class FirstStoryViewController: UIViewController {
         firstTopButton.setTitle(answer1a, for: .normal)
         firstBottomButton.setTitle(answer1b, for: .normal)
     }
-    
+
 
     
     

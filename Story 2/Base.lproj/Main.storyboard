@@ -29,7 +29,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0YA-rp-CcH" kind="show" id="yZN-uO-HJp"/>
+                                    <segue destination="0YA-rp-CcH" kind="show" identifier="first" id="yZN-uO-HJp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jC-eb-19d">
@@ -40,7 +40,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Oiy-Ch-8Wn" kind="show" id="dMH-cI-FXr"/>
+                                    <segue destination="Oiy-Ch-8Wn" kind="show" identifier="second" id="dMH-cI-FXr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-iD-Nqa">
@@ -51,17 +51,35 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Qdm-Vz-NIr" kind="show" id="uuG-DS-9Jk"/>
+                                    <segue destination="Qdm-Vz-NIr" kind="show" identifier="third" id="uuG-DS-9Jk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click on a Bookshelf to begin your story!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exo-2v-uzW">
-                                <rect key="frame" x="10" y="87" width="356" height="76"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exo-2v-uzW">
+                                <rect key="frame" x="10" y="98" width="356" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.59088189752252251" green="0.42352941176470588" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
                                 <color key="textColor" red="0.97478693181818177" green="0.85753449558862582" blue="0.66342347902950749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vsh-KW-j0m">
+                                <rect key="frame" x="16" y="113" width="171" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMN-3k-ccV">
+                                <rect key="frame" x="245" y="113" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Confirm Name">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fGF-UT-uII"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -72,9 +90,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Story Library" id="nqY-gf-2BS">
+                    <navigationItem key="navigationItem" title="Story Library" prompt="Enter Name and click on a Shelf to begin" largeTitleDisplayMode="never" id="nqY-gf-2BS">
                         <barButtonItem key="backBarButtonItem" title="Back to Story Library" id="GEt-bb-LLH"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userNameTextFieldd" destination="vsh-KW-j0m" id="U90-KL-IXO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,7 +104,7 @@
         <!--First Story View Controller-->
         <scene sceneID="H3y-Sm-wAn">
             <objects>
-                <viewController id="0YA-rp-CcH" customClass="FirstStoryViewController" customModule="Story_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="first" id="0YA-rp-CcH" customClass="FirstStoryViewController" customModule="Story_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Y7-Ee-tF2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,6 +150,13 @@
                                     <action selector="buttonPressed:" destination="0YA-rp-CcH" eventType="touchUpInside" id="QVU-YX-Taa"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqm-4u-6fr">
+                                <rect key="frame" x="0.0" y="592" width="375" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <color key="textColor" red="0.9806960227" green="0.9806960227" blue="0.9806960227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -158,17 +186,18 @@
                     <connections>
                         <outlet property="firstBottomButton" destination="RK0-mc-hfW" id="hlp-JD-nID"/>
                         <outlet property="firstStoryTextView" destination="BKs-0e-I0Y" id="TkL-mW-kY0"/>
+                        <outlet property="firstStoryTitle" destination="vqm-4u-6fr" id="pXf-Qu-17J"/>
                         <outlet property="firstTopButton" destination="tUp-Ic-mHC" id="Z4o-iy-Vhz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sk6-RS-GOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692" y="241.52923538230885"/>
+            <point key="canvasLocation" x="3398" y="-439"/>
         </scene>
         <!--Third Story View Controller-->
         <scene sceneID="G9I-sa-cVz">
             <objects>
-                <viewController id="Qdm-Vz-NIr" customClass="ThirdStoryViewController" customModule="Story_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="third" id="Qdm-Vz-NIr" customClass="ThirdStoryViewController" customModule="Story_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Xs-Eu-EFg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,6 +244,13 @@
                                     <action selector="buttonPressed:" destination="Qdm-Vz-NIr" eventType="touchUpInside" id="WCy-ZU-PCr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFa-zp-OWQ">
+                                <rect key="frame" x="0.0" y="613" width="375" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <color key="textColor" red="0.9806960227" green="0.9806960227" blue="0.9806960227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -242,17 +278,18 @@
                     <connections>
                         <outlet property="thirdBottomButton" destination="eOj-dr-GHw" id="6G0-kt-WCU"/>
                         <outlet property="thirdStoryTextView" destination="UhC-IN-7Za" id="LP3-Zf-KbP"/>
+                        <outlet property="thirdStoryTitle" destination="PFa-zp-OWQ" id="Ylu-4a-MYU"/>
                         <outlet property="thirdTopButton" destination="eVA-Pi-W8z" id="YC1-66-zgX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NKB-KE-igu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4640.8000000000002" y="714.69265367316348"/>
+            <point key="canvasLocation" x="4055" y="798"/>
         </scene>
         <!--Second Story View Controller-->
         <scene sceneID="itr-KC-Ghh">
             <objects>
-                <viewController id="Oiy-Ch-8Wn" customClass="SecondStoryViewController" customModule="Story_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="second" id="Oiy-Ch-8Wn" customClass="SecondStoryViewController" customModule="Story_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eje-zk-YAO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -299,6 +336,13 @@
                                     <action selector="buttonPressed:" destination="Oiy-Ch-8Wn" eventType="touchUpInside" id="qD9-Gp-Al3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzC-8H-Acc">
+                                <rect key="frame" x="0.0" y="600" width="375" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
+                                <color key="textColor" red="0.9806960227" green="0.9806960227" blue="0.9806960227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -333,12 +377,13 @@
                     <connections>
                         <outlet property="secondBottomButton" destination="z3b-ZM-Kts" id="fam-7H-YlD"/>
                         <outlet property="secondStoryTextView" destination="vCd-t1-FKM" id="RIT-V4-3sm"/>
+                        <outlet property="secondStoryTitle" destination="MzC-8H-Acc" id="JJF-fJ-DSg"/>
                         <outlet property="secondTopButton" destination="dnZ-J7-D06" id="zkW-Fb-wdn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRV-eu-cms" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3661.5999999999999" y="393.55322338830587"/>
+            <point key="canvasLocation" x="4743" y="147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ytk-06-dmy">

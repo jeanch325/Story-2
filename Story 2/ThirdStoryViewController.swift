@@ -11,7 +11,7 @@ import UIKit
 class ThirdStoryViewController: UIViewController {
     
     //stories
-    let story1 : String = "You're in space stuck on an alien ship. You have no idea how far away from Earth you are. The aliens have strapped you in a chair and locked it with a key located in the pocket of what appears to be the main alien, who happens to be right next to you,facing the other way. One key point to note is that all of the aliens are equipped with laser guns. Do you:"
+    let story1 : String = "You're in space stuck on an alien ship. The aliens have strapped you in a chair and locked it with a key located in the pocket of what appears to be the main alien, who happens to be right next to you,facing the other way. One key point to note is that all of the aliens are equipped with laser guns. Do you:"
     let answer1a : String = "Try to grab the key."
     let answer1b : String = "Stay put."
     
@@ -32,13 +32,16 @@ class ThirdStoryViewController: UIViewController {
     @IBOutlet weak var thirdStoryTextView: UITextView!
     @IBOutlet weak var thirdTopButton: UIButton!
     @IBOutlet weak var thirdBottomButton: UIButton!
+    @IBOutlet weak var thirdStoryTitle: UILabel!
     
-    
+    //var nCL = NameClassThing()
     var storyIndex : Int = 1
+    var name = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         restart()
+        thirdStoryTitle.text = "\(name)'s space adventure"
         // call restart
     }
 
