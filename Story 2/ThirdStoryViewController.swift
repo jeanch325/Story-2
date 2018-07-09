@@ -34,17 +34,17 @@ class ThirdStoryViewController: UIViewController {
     @IBOutlet weak var thirdBottomButton: UIButton!
     @IBOutlet weak var thirdStoryTitle: UILabel!
     
- 
+    
     var storyIndex : Int = 1
     var name = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         restart()
         thirdStoryTitle.text = "\(name.capitalized)'s space adventure"
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,15 +91,15 @@ class ThirdStoryViewController: UIViewController {
     func restartAlert () {
         //the time delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-        
-        let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Reset", style: .default) {
-            (action) -> Void in self.restart()
+            
+            let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Reset", style: .default) {
+                (action) -> Void in self.restart()
+            }
+            
+            alert.addAction(alertAction)
+            self.present(alert, animated: true, completion: nil)
         }
-        
-        alert.addAction(alertAction)
-        self.present(alert, animated: true, completion: nil)
-    }
     }
     
     //retart function
@@ -111,5 +111,5 @@ class ThirdStoryViewController: UIViewController {
         thirdTopButton.setTitle(answer1a, for: .normal)
         thirdBottomButton.setTitle(answer1b, for: .normal)
     }
-
+    
 }

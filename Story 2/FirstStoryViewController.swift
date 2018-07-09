@@ -12,7 +12,7 @@ class FirstStoryViewController: UIViewController {
     
     //Name
     var name = ""
-
+    
     
     //stories
     
@@ -47,7 +47,7 @@ class FirstStoryViewController: UIViewController {
         restart()
         firstStoryTitle.text = "\(name.capitalized)'s Dark Night"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -86,7 +86,7 @@ class FirstStoryViewController: UIViewController {
             firstBottomButton.isHidden = true
         }
         if (firstStoryTextView.text == story4 || firstStoryTextView.text == story5 || firstStoryTextView.text == story6) {
-        restartAlert()
+            restartAlert()
         }
     }
     
@@ -102,7 +102,7 @@ class FirstStoryViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-
+    
     func restart () {
         storyIndex = 1
         firstStoryTextView.text = story1
@@ -111,7 +111,7 @@ class FirstStoryViewController: UIViewController {
         firstTopButton.setTitle(answer1a, for: .normal)
         firstBottomButton.setTitle(answer1b, for: .normal)
     }
-  
+    
 }
 
 

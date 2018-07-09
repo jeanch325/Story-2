@@ -28,7 +28,7 @@ class SecondStoryViewController: UIViewController {
     let story5 : String = "You pull the blue cord and thankfully, the parachute opens! Blue is always the safest choice. You make it to the ground safely and now you can impress everyone that you meet by telling them you've jumped out of a moving plane and lived."
     
     let story6 : String = "You pulled the red cord. The whole parachute comes out, but still in its folded form. You can't get it to inflate in time and you crash into the ground at full speed. You die. "
-
+    
     
     @IBOutlet weak var secondStoryTextView: UITextView!
     @IBOutlet weak var secondTopButton: UIButton!
@@ -37,14 +37,14 @@ class SecondStoryViewController: UIViewController {
     
     var name = ""
     var storyIndex : Int = 1
-
+    
     //Refreshes the story to the beginning
     override func viewDidLoad() {
         super.viewDidLoad()
         restart()
         secondStoryTitle.text = "\(name.capitalized) goes skydiving"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,15 +91,15 @@ class SecondStoryViewController: UIViewController {
     func restartAlert () {
         //the time delay
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-        
-        let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Reset", style: .default) {
-            (action) -> Void in self.restart()
+            
+            let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Reset", style: .default) {
+                (action) -> Void in self.restart()
+            }
+            
+            alert.addAction(alertAction)
+            self.present(alert, animated: true, completion: nil)
         }
-        
-        alert.addAction(alertAction)
-        self.present(alert, animated: true, completion: nil)
-    }
     }
     
     //Restart function

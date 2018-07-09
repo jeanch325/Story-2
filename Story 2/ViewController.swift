@@ -7,9 +7,8 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
-
+    
     var name = ""
     
     @IBOutlet weak var userNameTextFieldd: UITextField!
@@ -19,7 +18,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-
+    
     @IBAction func unwindToInitialViewController(segue: UIStoryboardSegue) {
     }
     
@@ -48,9 +47,9 @@ class ViewController: UIViewController {
             dvc.name = name
         }
     }
-   
     
     
-
+    
+    
 }
 
