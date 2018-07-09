@@ -9,14 +9,14 @@
 import UIKit
 
 class FirstStoryViewController: UIViewController {
-    var name = ""
     
-    //importing other class
-    //var nCL = NameClassThing()
+    //Name
+    var name = ""
+
     
     //stories
     
-    let story1 : String = "You're walking home at night after your car broke down after a quick TacoBell run. You don't know quite where you are and your phone is on 5% battery. You're using the last of your battery to find your way to the nearest public area but you really are quite lost. Suddenly, a white van drives up behind you. The man in the driver's seat lowers the window and yells at you to get in. You look and see that he has a knife in his left hand. Do you:"
+    let story1 : String = "You're walking home at night after your car broke down after a quick Taco Bell run. You don't know quite where you are and your phone is on 5%. You're using the last of your battery to find your way to the nearest public area. Suddenly, a white van drives up behind you. The man in the driver's seat lowers the window and yells at you to get in. You look and see that he has a knife in his left hand. Do you:"
     let answer1a : String = "Get in the car."
     let answer1b : String = "Try to sprint away."
     
@@ -39,17 +39,13 @@ class FirstStoryViewController: UIViewController {
     @IBOutlet weak var firstBottomButton: UIButton!
     @IBOutlet weak var firstStoryTitle: UILabel!
     
-    
+    //Specifies the story
     var storyIndex : Int = 1
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         restart()
-        firstStoryTitle.text = "\(name)'s dark night"
-
-        // call restart function here!!!!!!!
+        firstStoryTitle.text = "\(name.capitalized)'s Dark Night"
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +53,7 @@ class FirstStoryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //The story path
     @IBAction func buttonPressed(_ sender: UIButton) {
         if (storyIndex == 1 || storyIndex == 2) && sender.tag == 1 {  //if it is on story 1 or 2 and user presses top button
             storyIndex = 3
@@ -94,9 +91,8 @@ class FirstStoryViewController: UIViewController {
     }
     
     func restartAlert () {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // change 2 to desired number of seconds
-            // Your code with delay
-        
+        //the time delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Reset", style: .default) {
                 (action) -> Void in self.restart()
@@ -107,14 +103,6 @@ class FirstStoryViewController: UIViewController {
         }
     }
 
-    
-    
-
-//    @IBAction func firstResetButton(_ sender: Any) {
-//        restart()
-//    }
-//
-    
     func restart () {
         storyIndex = 1
         firstStoryTextView.text = story1
@@ -123,10 +111,7 @@ class FirstStoryViewController: UIViewController {
         firstTopButton.setTitle(answer1a, for: .normal)
         firstBottomButton.setTitle(answer1b, for: .normal)
     }
-
-
-    
-    
+  
 }
 
 

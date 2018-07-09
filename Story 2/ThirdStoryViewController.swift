@@ -11,7 +11,7 @@ import UIKit
 class ThirdStoryViewController: UIViewController {
     
     //stories
-    let story1 : String = "You're in space stuck on an alien ship. The aliens have strapped you in a chair and locked it with a key located in the pocket of what appears to be the main alien, who happens to be right next to you,facing the other way. One key point to note is that all of the aliens are equipped with laser guns. Do you:"
+    let story1 : String = "You're in space stuck on an alien ship. The aliens have strapped you in a chair and locked it with a key located in the pocket of what appears to be the main alien, who happens to be right next to you facing the other way. One key point to note is that all of the aliens are equipped with laser guns. Do you:"
     let answer1a : String = "Try to grab the key."
     let answer1b : String = "Stay put."
     
@@ -34,21 +34,23 @@ class ThirdStoryViewController: UIViewController {
     @IBOutlet weak var thirdBottomButton: UIButton!
     @IBOutlet weak var thirdStoryTitle: UILabel!
     
-    //var nCL = NameClassThing()
+ 
     var storyIndex : Int = 1
     var name = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         restart()
-        thirdStoryTitle.text = "\(name)'s space adventure"
-        // call restart
+        thirdStoryTitle.text = "\(name.capitalized)'s space adventure"
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //story path
     @IBAction func buttonPressed(_ sender: UIButton) {
         if (storyIndex == 1 || storyIndex == 2) && sender.tag == 1 {  //if it is on story 1 or 2 and user presses top button
             storyIndex = 3
@@ -85,10 +87,10 @@ class ThirdStoryViewController: UIViewController {
         }
     }
     
+    //restart
     func restartAlert () {
-        //ADD TIME DELAY
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // change 2 to desired number of seconds
-            // Your code with delay
+        //the time delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
         
         let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Reset", style: .default) {
@@ -100,12 +102,7 @@ class ThirdStoryViewController: UIViewController {
     }
     }
     
-    
-//    @IBAction func firstResetButton(_ sender: Any) {
-//        restart()
-//    }
-    
-    
+    //retart function
     func restart () {
         storyIndex = 1
         thirdStoryTextView.text = story1

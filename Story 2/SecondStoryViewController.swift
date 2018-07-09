@@ -19,7 +19,7 @@ class SecondStoryViewController: UIViewController {
     let answer2a : String = "You decide to jump."
     let answer2b : String = "You back out."
     
-    let story3 : String = "You're flying!.. Well, you're actually falling, but who cares. You see the ground rushing closer and closer by the second and abruptly you realize that you don'tknow which cord to pull to inflate the parachute. Do you:"
+    let story3 : String = "You're flying!.. Well, you're actually falling, but who cares. You see the ground rushing closer and closer by the second and abruptly you realize that you don't know which cord to pull to inflate the parachute. Do you:"
     let answer3a : String = "Pull the red cord."
     let answer3b : String = "Pull the blue cord."
     
@@ -35,15 +35,14 @@ class SecondStoryViewController: UIViewController {
     @IBOutlet weak var secondBottomButton: UIButton!
     @IBOutlet weak var secondStoryTitle: UILabel!
     
-    //var nCL = NameClassThing()
     var name = ""
     var storyIndex : Int = 1
 
+    //Refreshes the story to the beginning
     override func viewDidLoad() {
         super.viewDidLoad()
         restart()
-        secondStoryTitle.text = "\(name) goes skydiving"
-        //call restart func
+        secondStoryTitle.text = "\(name.capitalized) goes skydiving"
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +50,7 @@ class SecondStoryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //the path of the story
     @IBAction func buttonPressed(_ sender: UIButton) {
         if (storyIndex == 1 || storyIndex == 2) && sender.tag == 1 {  //if it is on story 1 or 2 and user presses top button
             storyIndex = 3
@@ -87,10 +87,10 @@ class SecondStoryViewController: UIViewController {
         }
     }
     
+    //the alert
     func restartAlert () {
-        //ADD TIME DELAY
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { // change 2 to desired number of seconds
-            // Your code with delay
+        //the time delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
         
         let alert = UIAlertController(title: "End of Story", message: nil, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Reset", style: .default) {
@@ -102,12 +102,7 @@ class SecondStoryViewController: UIViewController {
     }
     }
     
-    
-//    @IBAction func firstResetButton(_ sender: Any) {
-//        restart()
-//    }
-    
-    
+    //Restart function
     func restart () {
         storyIndex = 1
         secondStoryTextView.text = story1
@@ -116,16 +111,4 @@ class SecondStoryViewController: UIViewController {
         secondTopButton.setTitle(answer1a, for: .normal)
         secondBottomButton.setTitle(answer1b, for: .normal)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
